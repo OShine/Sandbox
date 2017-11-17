@@ -1,11 +1,9 @@
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.EmailPage;
 import pages.MainPage;
-
-import java.util.concurrent.TimeUnit;
+import driver.Driver;
 
 
 /**
@@ -13,11 +11,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class Tests {
 
-    private WebDriver driver;
     private MainPage mainPage;
     private EmailPage emailPage;
 
-    private static final String BASE_URL = "https://mail.ru";
     private static final String USERNAME = "seleniumtests10@mail.ru";
     private static final String PASSWORD = "060788avavav";
     private static final String COMPOSE_BUTTON_TEXT = "Написать письмо";
@@ -25,21 +21,14 @@ public class Tests {
 
     @BeforeTest
     public void beforeTest() {
-
-        System.setProperty("webdriver.chrome.driver", "C:\\Webdriver\\chromedriver.exe");
-
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(BASE_URL);
-        //Driver.openHomePage();
+          Driver.openHomePage();
     }
 
     @Test
     public void loginTest() {
 
-        mainPage = new MainPage(driver);
-        emailPage = new EmailPage(driver);
+        mainPage = new MainPage();
+        emailPage = new EmailPage();
 
         mainPage.loginAs(USERNAME, PASSWORD);
         Assert.assertEquals(emailPage.getComposeButtonText(), COMPOSE_BUTTON_TEXT);
@@ -49,8 +38,8 @@ public class Tests {
     @Test
     public void logoutTest() {
 
-        mainPage = new MainPage(driver);
-        emailPage = new EmailPage(driver);
+        mainPage = new MainPage();
+        emailPage = new EmailPage();
 
         emailPage.clickLogoutButton();
         Assert.assertEquals(mainPage.getAuthButtonText(), AUTH_BUTTON_TEXT,"Login field is not presented" );
@@ -59,7 +48,6 @@ public class Tests {
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

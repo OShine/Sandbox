@@ -1,5 +1,6 @@
 package pages;
 
+import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,14 +9,14 @@ import org.openqa.selenium.WebDriver;
  */
 public class MainPage {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     private static final By MAILBOX_LOGIN = By.id("mailbox:login");
     private static final By MAILBOX_PASSWORD = By.id("mailbox:password");
     private static final By MAILBOX_AUTH_BUTTON = By.id("mailbox:submit");
 
-    public MainPage(WebDriver driver) {
-        this.driver = driver;
+    public MainPage() {
+        driver = Driver.getDriver().get();
     }
 
     private void setLogin(String login) {
