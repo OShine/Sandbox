@@ -32,6 +32,7 @@ public class Tests {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(BASE_URL);
+        //Driver.openHomePage();
     }
 
     @Test
@@ -59,5 +60,6 @@ public class Tests {
     @AfterTest
     public void tearDown() {
         driver.quit();
+        //Driver.closeDriver();
     }
 }
