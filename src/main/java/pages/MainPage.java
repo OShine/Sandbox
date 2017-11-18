@@ -7,17 +7,16 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by DenisShklyannik on 26.03.2017.
  */
-public class MainPage {
+public class MainPage{
 
     WebDriver driver;
 
+    //private static final String TITLE = "Mail.Ru: почта, поиск в интернете, новости, игры";
     private static final By MAILBOX_LOGIN = By.id("mailbox:login");
     private static final By MAILBOX_PASSWORD = By.id("mailbox:password");
     private static final By MAILBOX_AUTH_BUTTON = By.id("mailbox:submit");
 
-    public MainPage() {
-        driver = Driver.getDriver().get();
-    }
+    public MainPage(){driver = Driver.getDriver().get();}
 
     private void setLogin(String login) {
         driver.findElement(MAILBOX_LOGIN).sendKeys(login);
