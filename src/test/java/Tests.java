@@ -1,7 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.EmailPage;
-import pages.MainPage;
+import pages.InboxPage;
+import pages.LoginPage;
 import driver.Driver;
 
 
@@ -10,8 +10,8 @@ import driver.Driver;
  */
 public class Tests {
 
-    private MainPage mainPage;
-    private EmailPage emailPage;
+    private LoginPage loginPage;
+    private InboxPage inboxPage;
 
     private static final String USERNAME = "seleniumtests10@mail.ru";
     private static final String PASSWORD = "060788avavav";
@@ -26,22 +26,24 @@ public class Tests {
     @Test
     public void loginTest() {
 
-        mainPage = new MainPage();
-        emailPage = new EmailPage();
+        loginPage = new LoginPage();
+        inboxPage = new InboxPage();
 
-        mainPage.loginAs(USERNAME, PASSWORD);
-        Assert.assertEquals(emailPage.getComposeButtonText(), COMPOSE_BUTTON_TEXT);
+        loginPage.loginAs(USERNAME, PASSWORD);
+        Assert.assertEquals(inboxPage.getComposeButtonText(), COMPOSE_BUTTON_TEXT);
+        Assert.assertTrue(inboxPage.isDisplayed());
     }
 
 
     @Test
     public void logoutTest() {
 
-        mainPage = new MainPage();
-        emailPage = new EmailPage();
+        loginPage = new LoginPage();
+        inboxPage = new InboxPage();
 
-        emailPage.clickLogoutButton();
-        Assert.assertEquals(mainPage.getAuthButtonText(), AUTH_BUTTON_TEXT,"Login field is not presented" );
+        inboxPage.clickLogoutButton();
+        Assert.assertEquals(loginPage.getAuthButtonText(), AUTH_BUTTON_TEXT,"Login field is not presented" );
+        Assert.assertTrue(loginPage.isDisplayed());
 
     }
 
