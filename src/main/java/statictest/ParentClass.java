@@ -12,4 +12,8 @@ public class ParentClass {
     public int getStaticNumber() {
         return number;
     }
+
+    public void toDoSmthing() {
+        System.out.println("Метод который делает что-то");
+    }
 }

@@ -2,6 +2,8 @@ package statictest;
 
 public class Main {
 
+    interface Iout { void justPrint();}
+
     public static void main (String args[]){
 
         System.out.println("Изначальное значение переменной в родителе: " + ParentClass.number);
@@ -52,5 +54,12 @@ public class Main {
         System.out.println("Значение переменной в четвером объекте: " + fourthObject.getStaticNumber());
         System.out.println("Значение переменной в пятом объекте: " + fifthObject.getStaticNumber());
 
+        Iout anonymous = new Iout() {
+            public void justPrint() {
+                System.out.println("Просто текст для анонимного класса");
+            }
+        };
+        anonymous.justPrint();
     }
+
 }
