@@ -41,7 +41,8 @@ public class Tests {
         loginPage = new LoginPage();
         inboxPage = new InboxPage();
 
-        inboxPage.clickLogoutButton();
+        //inboxPage.clickLogoutButton();
+        inboxPage.Logout();
         Assert.assertEquals(loginPage.getAuthButtonText(), AUTH_BUTTON_TEXT,"Login field is not presented" );
         Assert.assertTrue(loginPage.isDisplayed());
 

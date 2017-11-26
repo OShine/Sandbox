@@ -3,11 +3,12 @@ package pages;
 import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import util.Logout;
 
 /**
  * Created by DenisShklyannik on 26.03.2017.
  */
-public class InboxPage extends Page{
+public class InboxPage extends Page implements Logout{
     WebDriver driver;
 
     private static final String TITLE = "(3) Входящие - Почта Mail.Ru";
