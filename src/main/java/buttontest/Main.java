@@ -5,10 +5,14 @@ public class Main {
     public static void main (String args[]){
 
         SimpleButton simpleButton = new SimpleButton();
-        DropdownButton dropdownButton = new DropdownButton();
+        DropDownButton dropDownButton = new DropDownButton();
         CheckboxButton checkboxButton = new CheckboxButton();
         RadioButton radioButton = new RadioButton();
 
+        simpleButton.Click(simpleButton);
+        dropDownButton.Click(dropDownButton);
+        checkboxButton.Click(checkboxButton);
+        radioButton.Click(radioButton);
 
     }
 }

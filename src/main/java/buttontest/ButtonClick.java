@@ -10,8 +10,8 @@ public interface ButtonClick {
         System.out.println("SimpleButton was clicked");
     }
 
-    default void Click(DropdownButton button) {
-        System.out.println("DropdownButton was clicked");
+    default void Click(DropDownButton button) {
+        System.out.println("DropDownButton was clicked");
     }
 
     default void Click(CheckboxButton button) {
