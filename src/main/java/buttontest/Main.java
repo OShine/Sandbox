@@ -14,5 +14,9 @@ public class Main {
         checkboxButton.Click(checkboxButton);
         radioButton.Click(radioButton);
 
+        simpleButton.ButtonClick();
+        dropDownButton.ButtonClick();
+        checkboxButton.ButtonClick();
+        radioButton.ButtonClick();
     }
 }
