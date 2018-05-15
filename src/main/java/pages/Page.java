@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 abstract class Page {
 
     private final String TITLE;
-    WebDriver driver;
+    private WebDriver driver;
 
     Page(String title) {
         TITLE = title;
@@ -14,6 +14,6 @@ abstract class Page {
     }
 
     public boolean isDisplayed() {
-        return driver.getTitle().contentEquals(TITLE);
+        return driver.getTitle().contains(TITLE);
     }
 }

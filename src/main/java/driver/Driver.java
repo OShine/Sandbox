@@ -17,10 +17,9 @@ public class Driver {
 
     public static ThreadLocal<WebDriver> getDriver(){
         if (driver.get() == null) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Webdriver\\chromedriver_new.exe");
-            //System.setProperty("webdriver.chrome.driver", "C:\\Webdriver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Webdriver\\chromedriver.exe");
             WebDriver d = new ChromeDriver();
-            d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            d.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
             d.manage().window().maximize();
 
             driver.set(d);
