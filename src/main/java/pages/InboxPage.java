@@ -13,7 +13,6 @@ public class InboxPage extends Page implements Logout{
 
     private static final String TITLE = "Входящие - Почта Mail.Ru";
     private static final By COMPOSE_BUTTON = By.cssSelector("[data-name=\"compose\"]>span");
-    private static final By LOGOUT_BUTTON = By.cssSelector("#PH_logoutLink");
 
     public InboxPage() {
         super(TITLE);
@@ -22,10 +21,6 @@ public class InboxPage extends Page implements Logout{
 
     public String getComposeButtonText() {
         return driver.findElement(COMPOSE_BUTTON).getText();
-    }
-
-    public void clickLogoutButton(){
-        driver.findElement(LOGOUT_BUTTON).click();
     }
 
 }
