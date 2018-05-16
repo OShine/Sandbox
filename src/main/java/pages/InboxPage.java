@@ -9,6 +9,7 @@ import util.Logout;
  * Created by DenisShklyannik on 26.03.2017.
  */
 public class InboxPage extends Page implements Logout{
+
     private WebDriver driver;
 
     private static final String TITLE = "Входящие - Почта Mail.Ru";

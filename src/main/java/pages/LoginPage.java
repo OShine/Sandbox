@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class LoginPage extends Page{
 
-    WebDriver driver;
+    private WebDriver driver;
 
     private static final String TITLE = "Mail.Ru: почта, поиск в интернете, новости, игры";
     private static final By MAILBOX_LOGIN = By.id("mailbox:login");
